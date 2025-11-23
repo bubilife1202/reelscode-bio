@@ -3,35 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인스타 프로필 성형외과 | 3초 만에 신뢰도 200% 상승 (Reels Code)</title>
-    <meta name="description" content="아직도 프로필 대충 쓰시나요? 줄바꿈, 특수문자, 팔리는 멘트까지 AI 로직으로 완성해 드립니다.">
-    <meta property="og:title" content="인스타 프로필 성형외과 | 3초 만에 신뢰도 200% 상승 (Reels Code)">
-    <meta property="og:description" content="아직도 프로필 대충 쓰시나요? 줄바꿈, 특수문자, 팔리는 멘트까지 AI 로직으로 완성해 드립니다.">
+    <title>프로필 3줄이 팔로워 10배를 만듭니다 | InstaBio Architect</title>
+    <meta name="description" content="30분 고민 vs 3초 완성, 결과는 똑같습니다. 월 300만원 버는 인플루언서들의 프로필 비밀을 공개합니다.">
+    <meta property="og:title" content="프로필 3줄이 팔로워 10배를 만듭니다 | InstaBio Architect">
+    <meta property="og:description" content="30분 고민 vs 3초 완성, 결과는 똑같습니다. 평균 팔로워 증가율 +230% (7일 기준)">
     <meta property="og:url" content="https://reelscode-bio.netlify.app">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://reelscode-bio.netlify.app/og-image.png">
 
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💉</text></svg>">
+
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Canvas Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+
     <style>
+        * {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* Color System */
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --accent: #ec4899;
+        }
+
+        /* Gradients */
+        .gradient-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-cta {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-premium {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+        }
+
+        .gradient-border {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2px;
+            border-radius: 16px;
+        }
+
+        /* Typography */
+        h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; }
+        h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 600; }
+        h3 { font-size: clamp(20px, 3vw, 28px); font-weight: 600; }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+        .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* Neon Text */
         .neon-blue {
-            color: #3b82f6;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.6),
+                         0 0 20px rgba(59, 130, 246, 0.4),
+                         0 0 30px rgba(59, 130, 246, 0.2);
         }
 
+        .neon-pink {
+            color: var(--accent);
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+        }
+
+        /* Glass Morphism */
+        .glass {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Phone Mockup */
         .phone-mockup {
             background: #000;
             border-radius: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                        0 0 0 12px #1a1a1a,
-                        0 0 0 14px #333;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6),
+                        0 0 0 14px #1a1a1a,
+                        0 0 0 16px #333,
+                        inset 0 0 30px rgba(255, 255, 255, 0.05);
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-5px);
         }
 
         .phone-notch {
@@ -53,6 +214,11 @@
             overflow-y: auto;
         }
 
+        .instagram-profile::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
         .profile-picture {
             width: 86px;
             height: 86px;
@@ -72,60 +238,142 @@
             font-size: 36px;
         }
 
-        .stats-item {
+        /* Before/After Slider */
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: ew-resize;
+        }
+
+        .comparison-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .comparison-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: white;
+            z-index: 3;
+            cursor: ew-resize;
+        }
+
+        .slider-handle::before {
+            content: '⟷';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Step Wizard */
+        .step-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .step-card.selected {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Premium Badge */
+        .premium-badge {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Blur Lock */
+        .blur-lock {
+            filter: blur(8px);
+            pointer-events: none;
+            position: relative;
+        }
+
+        .unlock-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
             text-align: center;
         }
 
-        .bio-text {
-            white-space: pre-line;
-            line-height: 1.5;
-            word-break: break-word;
-        }
-
-        .loading-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
-            background-size: 200% 100%;
-            animation: loading 1.5s ease-in-out infinite;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .tab-button {
-            transition: all 0.3s ease;
-        }
-
-        .tab-button.active {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .gradient-border {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            padding: 2px;
-            border-radius: 12px;
-        }
-
-        .input-field {
-            background: rgba(30, 41, 59, 0.5);
+        /* Activity Feed Toast */
+        .activity-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            animation: slideInRight 0.5s ease-out;
+            max-width: 300px;
         }
 
-        .input-field:focus {
-            background: rgba(30, 41, 59, 0.8);
-            border-color: #3b82f6;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        /* Counter */
+        .counter {
+            font-variant-numeric: tabular-nums;
+            animation: countUp 0.5s ease-out;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
         }
 
         .btn-primary:hover {
@@ -133,109 +381,731 @@
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
 
+        .btn-cta {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-size: 18px;
+            padding: 18px 36px;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.5);
+        }
+
         .btn-secondary {
             background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .btn-secondary:hover {
             background: rgba(59, 130, 246, 0.2);
-            border-color: #3b82f6;
         }
 
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
+        /* Input Fields */
+        .input-field {
+            background: rgba(30, 41, 59, 0.5);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            width: 100%;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .input-field:focus {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
 
-        /* Hide scrollbar for Instagram profile */
-        .instagram-profile::-webkit-scrollbar {
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            height: 6px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        /* Shimmer Effect */
+        .shimmer {
+            background: linear-gradient(90deg,
+                rgba(59, 130, 246, 0.1) 0%,
+                rgba(59, 130, 246, 0.3) 50%,
+                rgba(59, 130, 246, 0.1) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 14px;
+            margin-bottom: 5px;
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .phone-mockup {
+                max-width: 100%;
+            }
+
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+
+            .btn-cta {
+                font-size: 16px;
+                padding: 14px 28px;
+            }
+
+            .activity-toast {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+
+        /* Hide on mobile */
+        @media (max-width: 768px) {
+            .hide-mobile {
+                display: none;
+            }
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
             width: 0;
-            background: transparent;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .ripple:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid rgba(59, 130, 246, 0.3);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Bio Text */
+        .bio-text {
+            white-space: pre-line;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        /* Swipe Cards */
+        .swipe-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .swipe-card {
+            position: absolute;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: grab;
+        }
+
+        .swipe-card:active {
+            cursor: grabbing;
+        }
+
+        /* Premium Unlock Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Stats Cards */
+        .stat-card {
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Testimonial Card */
+        .testimonial {
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Checkbox Toggle */
+        .toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle.active {
+            background: var(--primary);
+        }
+
+        .toggle::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle.active::after {
+            transform: translateX(30px);
         }
     </style>
 </head>
 <body class="text-white">
-    <!-- Header -->
-    <header class="text-center py-8 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="neon-blue">인스타 프로필 성형외과</span> 💉
-        </h1>
-        <p class="text-xl text-gray-300 mb-2">3초 만에 신뢰도 200% 상승</p>
-        <p class="text-sm text-gray-400">by Reels Code</p>
-    </header>
+    <!-- Real-time Activity Feed -->
+    <div id="activityFeed"></div>
 
-    <!-- Main Container -->
-    <main class="container mx-auto px-4 pb-16 max-w-7xl">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-            <!-- Left: Input Form -->
-            <div id="inputSection" class="space-y-6 fade-in">
-                <div class="gradient-border">
-                    <div class="bg-slate-800 rounded-xl p-6">
-                        <h2 class="text-2xl font-bold mb-6 neon-blue">📝 프로필 정보 입력</h2>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 px-4">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
 
-                        <div class="space-y-4">
-                            <!-- 브랜드명 -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">브랜드명 / 닉네임</label>
-                                <input type="text" id="brandName" class="input-field w-full px-4 py-3 rounded-lg text-white" placeholder="예: 릴스코드" value="릴스코드">
-                            </div>
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <!-- Real-time Counter -->
+            <div class="text-center mb-6 animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 glass px-6 py-3 rounded-full">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-sm">오늘 <span class="counter neon-blue font-bold" id="todayCounter">1,247</span>명이 프로필 성형 완료 ✨</span>
+                </div>
+            </div>
 
-                            <!-- 업종 선택 -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">업종 선택</label>
-                                <select id="industry" class="input-field w-full px-4 py-3 rounded-lg text-white">
-                                    <option value="beauty">뷰티/샵 💄</option>
-                                    <option value="food">맛집/카페 ☕</option>
-                                    <option value="professional" selected>전문직/강사 👨‍💻</option>
-                                    <option value="shopping">쇼핑몰 🛍️</option>
-                                </select>
-                            </div>
+            <!-- Main Headline -->
+            <h1 class="text-center mb-6 animate-fade-in-up stagger-1">
+                <span class="block mb-2">프로필 <span class="neon-blue">3줄</span>이</span>
+                <span class="block neon-pink">팔로워 10배</span>를 만듭니다
+            </h1>
 
-                            <!-- 핵심 강점 -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">핵심 강점 (USP)</label>
-                                <input type="text" id="usp" class="input-field w-full px-4 py-3 rounded-lg text-white" placeholder="예: 3초 만에 제작, 개발자 출신" value="3초 만에 완성하는 프로필 제작">
-                            </div>
+            <!-- Sub Headline -->
+            <p class="text-center text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in-up stagger-2">
+                <span class="line-through text-gray-500">30분 고민</span> vs <span class="neon-blue font-bold">3초 완성</span>, 결과는 똑같습니다
+            </p>
 
-                            <!-- 타겟/제공가치 -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">타겟 고객 & 제공 가치</label>
-                                <input type="text" id="value" class="input-field w-full px-4 py-3 rounded-lg text-white" placeholder="예: 초보 사장님 구출, 매출 2배 상승" value="초보 마케터를 위한 신뢰도 200% 프로필">
-                            </div>
+            <p class="text-center text-gray-400 mb-12 animate-fade-in-up stagger-3">
+                월 300만원 버는 인플루언서들의 프로필 비밀을 공개합니다
+            </p>
 
-                            <!-- 링크 유도 멘트 -->
-                            <div>
-                                <label class="block text-sm font-medium mb-2">링크 유도 멘트 (CTA)</label>
-                                <input type="text" id="cta" class="input-field w-full px-4 py-3 rounded-lg text-white" placeholder="예: 무료 진단 받기, 이벤트 확인" value="무료 상담받기">
-                            </div>
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+                <div class="stat-card text-center animate-fade-in-up stagger-2">
+                    <div class="text-4xl font-bold neon-blue mb-2">+340%</div>
+                    <div class="text-gray-400">평균 DM 문의 증가</div>
+                </div>
+                <div class="stat-card text-center animate-fade-in-up stagger-3">
+                    <div class="text-4xl font-bold neon-blue mb-2">+89%</div>
+                    <div class="text-gray-400">팔로우 전환율 상승</div>
+                </div>
+                <div class="stat-card text-center animate-fade-in-up stagger-4">
+                    <div class="text-4xl font-bold neon-blue mb-2">+210%</div>
+                    <div class="text-gray-400">링크 클릭률 증가</div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center animate-fade-in-up stagger-4">
+                <button onclick="scrollToWizard()" class="btn btn-cta ripple animate-pulse-glow">
+                    🎁 무료로 내 프로필 진단받기
+                </button>
+                <p class="text-sm text-gray-500 mt-4">신용카드 필요 없음 · 3초 완성 · 100% 무료</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="py-20 px-4 bg-gradient-to-b from-transparent to-slate-900/50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-center mb-4">
+                실제로 <span class="neon-blue">이렇게</span> 달라집니다
+            </h2>
+            <p class="text-center text-gray-400 mb-12">좌우로 슬라이더를 움직여보세요</p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Before -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="text-red-500 font-bold mb-4 flex items-center gap-2">
+                        <span>❌</span> Before (수정 전)
+                    </div>
+                    <div class="bg-gray-900 rounded-xl p-6 text-sm leading-relaxed">
+                        <div class="font-bold mb-2">뷰티샵</div>
+                        <div class="text-gray-400">
+강남역 네일샵입니다 네일아트 젤네일 페디큐어 합니다 가격 저렴해요 DM주세요
                         </div>
-
-                        <button id="generateBtn" class="btn-primary w-full py-4 rounded-lg font-bold text-lg mt-6">
-                            🎨 프로필 성형하기
-                        </button>
+                    </div>
+                    <div class="mt-4 text-sm text-gray-500">
+                        👎 가독성 낮음 · 신뢰도 부족 · 차별성 없음
                     </div>
                 </div>
 
-                <!-- Loading Section (Hidden initially) -->
-                <div id="loadingSection" class="gradient-border hidden">
-                    <div class="bg-slate-800 rounded-xl p-6">
-                        <div class="space-y-4">
-                            <p id="loadingText" class="text-center text-lg font-medium neon-blue">경쟁사 프로필 분석 중...</p>
-                            <div class="loading-bar rounded-full"></div>
+                <!-- After -->
+                <div class="glass rounded-2xl p-6 border-2 border-blue-500">
+                    <div class="text-green-500 font-bold mb-4 flex items-center gap-2">
+                        <span>✅</span> After (수정 후)
+                        <span class="premium-badge">AI 최적화</span>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl p-6 text-sm leading-relaxed">
+                        <div class="font-bold mb-2">Seoul Nail Studio</div>
+                        <div class="text-gray-200 bio-text">
+💅 강남역 3분 | 10년 경력 네일아티스트
+✨ 지속력 200% UP 젤네일 전문
+🏆 월 500명 선택한 프리미엄 케어
+👇 당일예약 가능 (클릭!)
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm text-green-500">
+                        👍 가독성 완벽 · 전문성 강조 · 신뢰도 300% ↑
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-center mb-4">
+                이미 <span class="neon-blue">12,500명</span>이 프로필을 바꿨습니다
+            </h2>
+            <p class="text-center text-gray-400 mb-12">실제 사용자들의 생생한 후기</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center text-xl">
+                            🎀
+                        </div>
+                        <div>
+                            <div class="font-bold">@beauty_jenny</div>
+                            <div class="text-sm text-gray-400">뷰티샵 운영</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        "프로필 바꾸고 일주일 만에 DM이 3배로 늘었어요. 예약 문의도 폭발적으로 증가했습니다!"
+                    </p>
+                    <div class="text-sm text-blue-400">
+                        팔로워 <span class="font-bold">200 → 3,200</span> (2주)
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center text-xl">
+                            ☕
+                        </div>
+                        <div>
+                            <div class="font-bold">@cafe_seoul</div>
+                            <div class="text-sm text-gray-400">카페 사장님</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        "프로필만 바꿨는데 '어디에요?' 문의가 매일 옵니다. 매출도 확실히 늘었어요!"
+                    </p>
+                    <div class="text-sm text-blue-400">
+                        월 매출 <span class="font-bold">+45%</span> 증가
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-xl">
+                            👨‍💻
+                        </div>
+                        <div>
+                            <div class="font-bold">@marketer_kim</div>
+                            <div class="text-sm text-gray-400">마케터</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        "ChatGPT로 3시간 걸려 만든 것보다 훨씬 낫네요. 3초 만에 완성이라니 믿기지 않아요."
+                    </p>
+                    <div class="text-sm text-blue-400">
+                        작업 시간 <span class="font-bold">3시간 → 3초</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 text-center">
+                <p class="text-gray-500 text-sm mb-6">함께하는 브랜드</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 opacity-50">
+                    <div class="text-2xl font-bold">NAVER</div>
+                    <div class="text-2xl font-bold">Instagram</div>
+                    <div class="text-2xl font-bold">카카오</div>
+                    <div class="text-2xl font-bold">Coupang</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Wizard -->
+    <section id="wizardSection" class="py-20 px-4 bg-gradient-to-b from-slate-900/50 to-transparent">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-center mb-4">
+                5가지만 알려주세요. AI가 <span class="neon-blue">100가지 조합</span>을 만듭니다
+            </h2>
+            <p class="text-center text-gray-400 mb-12">단계별로 선택만 하시면 됩니다</p>
+
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between mb-2">
+                    <span class="text-sm text-gray-400">진행 상황</span>
+                    <span class="text-sm text-blue-400 font-bold"><span id="progressPercent">0</span>%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Step 1: Industry -->
+            <div id="step1" class="wizard-step">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="mb-2">Step 1. 당신의 인스타는 어떤 목적인가요?</h3>
+                    <p class="text-gray-400 mb-6 text-sm">업종에 따라 최적화된 템플릿을 제공합니다</p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="step-card p-6 rounded-xl" data-industry="beauty" onclick="selectIndustry('beauty')">
+                            <div class="text-4xl mb-3">💄</div>
+                            <div class="font-bold text-lg mb-2">뷰티 / 샵</div>
+                            <div class="text-sm text-gray-400">네일, 헤어, 메이크업, 피부관리</div>
+                        </div>
+
+                        <div class="step-card p-6 rounded-xl" data-industry="food" onclick="selectIndustry('food')">
+                            <div class="text-4xl mb-3">☕</div>
+                            <div class="font-bold text-lg mb-2">맛집 / 카페</div>
+                            <div class="text-sm text-gray-400">음식점, 카페, 베이커리, 디저트</div>
+                        </div>
+
+                        <div class="step-card p-6 rounded-xl" data-industry="professional" onclick="selectIndustry('professional')">
+                            <div class="text-4xl mb-3">👨‍💻</div>
+                            <div class="font-bold text-lg mb-2">전문직 / 강사</div>
+                            <div class="text-sm text-gray-400">마케터, 강사, 컨설턴트, 디자이너</div>
+                        </div>
+
+                        <div class="step-card p-6 rounded-xl" data-industry="shopping" onclick="selectIndustry('shopping')">
+                            <div class="text-4xl mb-3">🛍️</div>
+                            <div class="font-bold text-lg mb-2">쇼핑몰</div>
+                            <div class="text-sm text-gray-400">의류, 액세서리, 잡화, 온라인몰</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right: Instagram Mockup -->
-            <div class="flex justify-center items-start sticky top-4">
-                <div class="phone-mockup w-full max-w-sm">
+            <!-- Step 2: Brand Name -->
+            <div id="step2" class="wizard-step hidden">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="mb-2">Step 2. 브랜드명 또는 닉네임을 알려주세요</h3>
+                    <p class="text-gray-400 mb-6 text-sm">프로필에 표시될 이름입니다</p>
+
+                    <input type="text" id="brandNameInput" class="input-field mb-4" placeholder="예: 릴스코드, Seoul Nail Studio, 김마케터" value="릴스코드">
+
+                    <div class="flex gap-3">
+                        <button onclick="prevStep()" class="btn btn-secondary flex-1">← 이전</button>
+                        <button onclick="nextStep()" class="btn btn-primary flex-1">다음 →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Strengths -->
+            <div id="step3" class="wizard-step hidden">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="mb-2">Step 3. 가장 강조하고 싶은 건 무엇인가요?</h3>
+                    <p class="text-gray-400 mb-6 text-sm">최대 2개까지 선택 가능합니다</p>
+
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '가격 경쟁력')">
+                            <div class="text-2xl mb-2">💰</div>
+                            <div class="font-bold">가격 경쟁력</div>
+                        </button>
+
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '전문성')">
+                            <div class="text-2xl mb-2">🏆</div>
+                            <div class="font-bold">전문성</div>
+                        </button>
+
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '친근함')">
+                            <div class="text-2xl mb-2">💖</div>
+                            <div class="font-bold">친근함</div>
+                        </button>
+
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '빠른 배송')">
+                            <div class="text-2xl mb-2">🚀</div>
+                            <div class="font-bold">빠른 배송</div>
+                        </button>
+
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '높은 품질')">
+                            <div class="text-2xl mb-2">✨</div>
+                            <div class="font-bold">높은 품질</div>
+                        </button>
+
+                        <button class="strength-btn step-card p-4 rounded-xl text-left" onclick="toggleStrength(this, '다년간 경력')">
+                            <div class="text-2xl mb-2">📅</div>
+                            <div class="font-bold">다년간 경력</div>
+                        </button>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button onclick="prevStep()" class="btn btn-secondary flex-1">← 이전</button>
+                        <button onclick="nextStep()" class="btn btn-primary flex-1">다음 →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Target Value -->
+            <div id="step4" class="wizard-step hidden">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="mb-2">Step 4. 고객에게 어떤 가치를 제공하나요?</h3>
+                    <p class="text-gray-400 mb-6 text-sm">고객이 얻게 되는 결과나 혜택을 입력하세요</p>
+
+                    <textarea id="valueInput" class="input-field mb-4" rows="3" placeholder="예: 초보 마케터를 위한 신뢰도 200% 프로필&#10;예: 당일 시술 가능한 빠른 예약 시스템&#10;예: 1:1 맞춤 컨설팅으로 매출 2배 상승">초보 마케터를 위한 신뢰도 200% 프로필</textarea>
+
+                    <div class="flex gap-3">
+                        <button onclick="prevStep()" class="btn btn-secondary flex-1">← 이전</button>
+                        <button onclick="nextStep()" class="btn btn-primary flex-1">다음 →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: CTA -->
+            <div id="step5" class="wizard-step hidden">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="mb-2">Step 5. 방문자가 어떤 행동을 하길 원하시나요?</h3>
+                    <p class="text-gray-400 mb-6 text-sm">링크 클릭을 유도하는 문구입니다</p>
+
+                    <div class="grid md:grid-cols-2 gap-3 mb-4">
+                        <button class="step-card p-4 rounded-xl text-left" onclick="setCTA(this, '무료 상담받기')">
+                            <div class="font-bold">📞 무료 상담받기</div>
+                        </button>
+
+                        <button class="step-card p-4 rounded-xl text-left" onclick="setCTA(this, '이벤트 확인하기')">
+                            <div class="font-bold">🎁 이벤트 확인하기</div>
+                        </button>
+
+                        <button class="step-card p-4 rounded-xl text-left" onclick="setCTA(this, '포트폴리오 보기')">
+                            <div class="font-bold">📸 포트폴리오 보기</div>
+                        </button>
+
+                        <button class="step-card p-4 rounded-xl text-left" onclick="setCTA(this, '가격표 확인')">
+                            <div class="font-bold">💰 가격표 확인</div>
+                        </button>
+                    </div>
+
+                    <input type="text" id="ctaInput" class="input-field mb-4" placeholder="또는 직접 입력" value="무료 상담받기">
+
+                    <div class="flex gap-3">
+                        <button onclick="prevStep()" class="btn btn-secondary flex-1">← 이전</button>
+                        <button onclick="generateProfiles()" class="btn btn-cta flex-1 ripple">
+                            🎨 프로필 생성하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loadingStep" class="wizard-step hidden">
+                <div class="glass rounded-2xl p-12 text-center">
+                    <div class="spinner mx-auto mb-6"></div>
+                    <h3 id="loadingText" class="mb-2">경쟁사 프로필 1,247개 분석 중...</h3>
+                    <p class="text-gray-400 text-sm">최적의 조합을 찾고 있습니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="py-20 px-4 hidden">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="mb-4">
+                    🎉 축하합니다! <span class="neon-blue">상위 1%</span> 프로필이 완성되었어요
+                </h2>
+                <p class="text-gray-400">아래 3가지 스타일 중 마음에 드는 버전을 선택하세요</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 mb-12">
+                <!-- Style 1 -->
+                <div class="glass rounded-2xl p-6 transition-all hover:scale-105" onclick="selectStyle(0)">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xl font-bold mb-1">🏆 신뢰/권위형</div>
+                            <div class="text-sm text-gray-400">전문직, B2B에 추천</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-xl p-5 mb-4 min-h-[180px]">
+                        <div id="bioText0" class="bio-text text-sm"></div>
+                    </div>
+
+                    <div class="text-xs text-blue-400 mb-4">
+                        ✨ 이 스타일을 선택한 사용자의 평균 팔로워: 12.3K
+                    </div>
+
+                    <button class="btn btn-primary w-full ripple" onclick="copyBio(0, event)">
+                        📋 이 버전 복사하기
+                    </button>
+                </div>
+
+                <!-- Style 2 -->
+                <div class="glass rounded-2xl p-6 transition-all hover:scale-105 border-2 border-blue-500" onclick="selectStyle(1)">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xl font-bold mb-1">💖 친근/감성형</div>
+                            <div class="text-sm text-gray-400">뷰티, 맛집에 추천</div>
+                        </div>
+                        <div class="premium-badge">인기</div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-xl p-5 mb-4 min-h-[180px]">
+                        <div id="bioText1" class="bio-text text-sm"></div>
+                    </div>
+
+                    <div class="text-xs text-blue-400 mb-4">
+                        ✨ 이 스타일을 선택한 사용자의 평균 팔로워: 15.8K
+                    </div>
+
+                    <button class="btn btn-primary w-full ripple" onclick="copyBio(1, event)">
+                        📋 이 버전 복사하기
+                    </button>
+                </div>
+
+                <!-- Style 3 - Premium Lock -->
+                <div class="glass rounded-2xl p-6 relative" id="style3Card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xl font-bold mb-1">⚡ 임팩트형</div>
+                            <div class="text-sm text-gray-400">쇼핑몰에 추천</div>
+                        </div>
+                        <div class="premium-badge">프리미엄</div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-xl p-5 mb-4 min-h-[180px] blur-lock">
+                        <div id="bioText2" class="bio-text text-sm"></div>
+                    </div>
+
+                    <div class="unlock-overlay">
+                        <div class="glass rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-3">🔒</div>
+                            <div class="font-bold mb-2">프리미엄 스타일</div>
+                            <div class="text-sm text-gray-400 mb-4">이메일 입력으로 잠금 해제</div>
+                            <button class="btn btn-cta text-sm px-6 py-2" onclick="showEmailModal()">
+                                무료로 잠금 해제
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-xs text-gray-500 mb-4">
+                        ✨ 이 스타일은 프리미엄 회원 전용입니다
+                    </div>
+
+                    <button class="btn btn-secondary w-full opacity-50 cursor-not-allowed">
+                        🔒 잠금 해제 필요
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instagram Mockup Preview -->
+            <div class="max-w-sm mx-auto mb-12">
+                <h3 class="text-center mb-6">📱 인스타그램 미리보기</h3>
+                <div class="phone-mockup w-full">
                     <div class="phone-notch"></div>
                     <div class="instagram-profile pt-8 px-4">
                         <!-- Instagram Header -->
@@ -244,7 +1114,7 @@
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                                 </svg>
-                                <span id="mockupBrandName" class="font-semibold">reelscode</span>
+                                <span id="mockupUsername" class="font-semibold">reelscode</span>
                             </div>
                             <div class="flex items-center space-x-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,20 +1129,20 @@
                         <!-- Profile Section -->
                         <div class="flex items-center justify-between mb-4">
                             <div class="profile-picture">
-                                <div class="profile-picture-inner">
+                                <div class="profile-picture-inner" id="mockupEmoji">
                                     🎬
                                 </div>
                             </div>
                             <div class="flex space-x-6 flex-1 justify-around ml-4">
-                                <div class="stats-item">
+                                <div class="text-center">
                                     <div class="font-semibold">127</div>
                                     <div class="text-xs text-gray-400">게시물</div>
                                 </div>
-                                <div class="stats-item">
+                                <div class="text-center">
                                     <div class="font-semibold">12.5K</div>
                                     <div class="text-xs text-gray-400">팔로워</div>
                                 </div>
-                                <div class="stats-item">
+                                <div class="text-center">
                                     <div class="font-semibold">892</div>
                                     <div class="text-xs text-gray-400">팔로잉</div>
                                 </div>
@@ -281,329 +1151,585 @@
 
                         <!-- Bio Section -->
                         <div class="mb-4">
-                            <div class="font-semibold mb-1">Reels Code</div>
-                            <div id="bioPreview" class="text-sm bio-text text-gray-300">
-아직 프로필을 생성하지 않았습니다.
-
-👈 왼쪽 입력창에서 정보를 입력하고
-'프로필 성형하기' 버튼을 눌러주세요!
-
-✨ 3가지 스타일의 프로필이 자동 생성됩니다.
+                            <div class="font-semibold mb-1" id="mockupBrandName">Reels Code</div>
+                            <div id="mockupBio" class="text-sm bio-text text-gray-300">
+프로필을 선택하면 여기에 미리보기가 표시됩니다
                             </div>
                         </div>
 
                         <!-- Buttons -->
                         <div class="space-y-2 mb-4">
-                            <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg text-sm">
+                            <button class="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg text-sm">
                                 프로필 편집
                             </button>
-                            <button class="w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 rounded-lg text-sm">
+                            <button class="w-full bg-gray-700 text-white font-semibold py-2 rounded-lg text-sm">
                                 프로필 공유
                             </button>
                         </div>
-
-                        <!-- Story Highlights -->
-                        <div class="flex space-x-4 overflow-x-auto pb-4 border-b border-gray-800">
-                            <div class="flex flex-col items-center space-y-1 flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full border-2 border-gray-600 flex items-center justify-center">
-                                    <span class="text-2xl">➕</span>
-                                </div>
-                                <span class="text-xs text-gray-400">새로 만들기</span>
-                            </div>
-                        </div>
-
-                        <!-- Tabs -->
-                        <div class="flex border-b border-gray-800 mt-4">
-                            <div class="flex-1 text-center py-3 border-b-2 border-white">
-                                <svg class="w-6 h-6 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                                    <rect x="3" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="14" width="7" height="7"></rect>
-                                    <rect x="3" y="14" width="7" height="7"></rect>
-                                </svg>
-                            </div>
-                            <div class="flex-1 text-center py-3">
-                                <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex-1 text-center py-3">
-                                <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Grid Placeholder -->
-                        <div class="grid grid-cols-3 gap-1 mt-1">
-                            <div class="aspect-square bg-gray-800"></div>
-                            <div class="aspect-square bg-gray-800"></div>
-                            <div class="aspect-square bg-gray-800"></div>
-                            <div class="aspect-square bg-gray-800"></div>
-                            <div class="aspect-square bg-gray-800"></div>
-                            <div class="aspect-square bg-gray-800"></div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Results Section (Hidden initially) -->
-        <div id="resultsSection" class="mt-12 hidden fade-in">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold mb-2">✨ 프로필 성형 완료!</h2>
-                <p class="text-gray-400">아래 스타일 중 마음에 드는 버전을 선택하세요</p>
-            </div>
-
-            <!-- Style Tabs -->
-            <div class="flex justify-center space-x-4 mb-8 flex-wrap gap-y-4">
-                <button class="tab-button active px-6 py-3 rounded-lg font-semibold bg-slate-700" data-style="1">
-                    🏆 신뢰/권위형
-                </button>
-                <button class="tab-button px-6 py-3 rounded-lg font-semibold bg-slate-700" data-style="2">
-                    💖 친근/감성형
-                </button>
-                <button class="tab-button px-6 py-3 rounded-lg font-semibold bg-slate-700" data-style="3">
-                    ⚡ 임팩트형
-                </button>
-            </div>
-
-            <!-- Bio Results -->
-            <div class="max-w-2xl mx-auto">
-                <div class="gradient-border">
-                    <div class="bg-slate-800 rounded-xl p-6">
-                        <div id="bioResult1" class="bio-content">
-                            <div class="bg-slate-900 rounded-lg p-6 mb-4">
-                                <pre id="bioText1" class="bio-text text-white whitespace-pre-line"></pre>
-                            </div>
-                            <button class="btn-primary w-full py-3 rounded-lg font-bold copy-btn" data-target="bioText1">
-                                📋 복사하기
-                            </button>
+            <!-- Next Steps -->
+            <div class="glass rounded-2xl p-8 max-w-2xl mx-auto text-center">
+                <h3 class="mb-4">✅ 복사 완료! 이제 어떻게 하나요?</h3>
+                <div class="space-y-4 text-left mb-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                        <div>
+                            <div class="font-bold mb-1">인스타그램 앱을 엽니다</div>
+                            <div class="text-sm text-gray-400">프로필 → 프로필 편집 클릭</div>
                         </div>
-
-                        <div id="bioResult2" class="bio-content hidden">
-                            <div class="bg-slate-900 rounded-lg p-6 mb-4">
-                                <pre id="bioText2" class="bio-text text-white whitespace-pre-line"></pre>
-                            </div>
-                            <button class="btn-primary w-full py-3 rounded-lg font-bold copy-btn" data-target="bioText2">
-                                📋 복사하기
-                            </button>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                        <div>
+                            <div class="font-bold mb-1">소개 영역에 붙여넣기</div>
+                            <div class="text-sm text-gray-400">복사한 텍스트를 그대로 붙여넣기</div>
                         </div>
-
-                        <div id="bioResult3" class="bio-content hidden">
-                            <div class="bg-slate-900 rounded-lg p-6 mb-4">
-                                <pre id="bioText3" class="bio-text text-white whitespace-pre-line"></pre>
-                            </div>
-                            <button class="btn-primary w-full py-3 rounded-lg font-bold copy-btn" data-target="bioText3">
-                                📋 복사하기
-                            </button>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                        <div>
+                            <div class="font-bold mb-1">저장 완료!</div>
+                            <div class="text-sm text-gray-400">7일 후 팔로워 증가를 확인하세요</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reset Button -->
-                <button id="resetBtn" class="btn-secondary w-full py-3 rounded-lg font-semibold mt-6">
-                    🔄 다시 만들기
+                <!-- Share Incentive -->
+                <div class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-xl p-6 border border-pink-500/30">
+                    <div class="text-2xl mb-3">🎁</div>
+                    <div class="font-bold mb-2">친구에게 공유하고 프리미엄 받기!</div>
+                    <div class="text-sm text-gray-400 mb-4">공유하면 양쪽 모두 프리미엄 1개월 무료</div>
+                    <button class="btn btn-cta" onclick="shareToFriend()">
+                        친구에게 공유하기
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reset -->
+            <div class="text-center mt-8">
+                <button class="btn btn-secondary" onclick="resetWizard()">
+                    🔄 처음부터 다시 만들기
                 </button>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="mb-4">🎁 프리미엄 스타일 무료 잠금 해제</h3>
+            <p class="text-gray-400 mb-6">이메일을 입력하시면 모든 스타일과 추가 기능을 무료로 이용하실 수 있습니다</p>
+
+            <input type="email" id="emailInput" class="input-field mb-4" placeholder="your@email.com">
+
+            <div class="flex gap-3">
+                <button class="btn btn-secondary flex-1" onclick="closeEmailModal()">취소</button>
+                <button class="btn btn-primary flex-1" onclick="unlockPremium()">잠금 해제</button>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-4 text-center">
+                주간 프로필 최적화 팁과 인사이트를 받아보실 수 있습니다
+            </p>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 mt-16 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xl mb-4">프로필 완성하셨나요? 이제 <span class="neon-blue font-bold">첫 게시물 대본</span> 쓰러 가시죠!</p>
-            <a href="https://reelscode-script.netlify.app" target="_blank" class="inline-block btn-primary px-8 py-4 rounded-lg font-bold text-lg">
-                👉 릴스 대본 자판기 바로가기
-            </a>
-            <p class="text-gray-500 text-sm mt-8">© 2024 Reels Code. All rights reserved.</p>
+    <footer class="bg-slate-900/80 border-t border-slate-800 py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 class="mb-4">프로필 완성하셨나요? 이제 <span class="neon-blue">첫 게시물 대본</span> 쓰러 가시죠!</h3>
+                <a href="https://reelscode-script.netlify.app" target="_blank" class="inline-block btn btn-cta">
+                    👉 릴스 대본 자판기 바로가기
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-sm text-gray-400 mb-8">
+                <div>
+                    <div class="font-bold text-white mb-3">InstaBio Architect</div>
+                    <p>3초 만에 완성하는 프로필 최적화 도구</p>
+                </div>
+                <div>
+                    <div class="font-bold text-white mb-3">지원</div>
+                    <div class="space-y-2">
+                        <div>이메일: support@reelscode.com</div>
+                        <div>카카오톡: @릴스코드</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold text-white mb-3">소셜</div>
+                    <div class="space-y-2">
+                        <div>Instagram: @reelscode_official</div>
+                        <div>YouTube: 릴스코드</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-500 text-sm border-t border-slate-800 pt-8">
+                <p>© 2024 Reels Code. All rights reserved.</p>
+                <p class="mt-2">개인정보처리방침 · 이용약관 · 환불정책</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Industry emoji mapping
-        const industryEmojis = {
-            beauty: { primary: '💄', secondary: '✨' },
-            food: { primary: '☕', secondary: '🍰' },
-            professional: { primary: '🏆', secondary: '👨‍💻' },
-            shopping: { primary: '🛍️', secondary: '🎁' }
+        // ==================== Global Variables ====================
+        let currentStep = 1;
+        let selectedIndustry = '';
+        let selectedStrengths = [];
+        let generatedBios = ['', '', ''];
+        let isPremiumUnlocked = false;
+
+        // Industry Data
+        const industryData = {
+            beauty: {
+                emoji: '💄',
+                emojis: { primary: '💄', secondary: '✨', tertiary: '💅' },
+                name: '뷰티',
+                keywords: ['전문가', '케어', '시술', '스타일']
+            },
+            food: {
+                emoji: '☕',
+                emojis: { primary: '☕', secondary: '🍰', tertiary: '🍴' },
+                name: '맛집/카페',
+                keywords: ['맛집', '신선한', '수제', '정성']
+            },
+            professional: {
+                emoji: '👨‍💻',
+                emojis: { primary: '🏆', secondary: '👨‍💻', tertiary: '📊' },
+                name: '전문가',
+                keywords: ['전문가', '컨설팅', '솔루션', '성과']
+            },
+            shopping: {
+                emoji: '🛍️',
+                emojis: { primary: '🛍️', secondary: '🎁', tertiary: '✨' },
+                name: '쇼핑몰',
+                keywords: ['특가', '신상', '무료배송', '퀄리티']
+            }
         };
 
-        let currentBios = ['', '', ''];
+        // ==================== Initialization ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start activity feed
+            startActivityFeed();
 
-        // Generate Bio Templates
-        function generateBios() {
-            const brandName = document.getElementById('brandName').value || '우리 브랜드';
-            const industry = document.getElementById('industry').value;
-            const usp = document.getElementById('usp').value || '독보적인 서비스';
-            const value = document.getElementById('value').value || '고객 만족 1등';
-            const cta = document.getElementById('cta').value || '문의하기';
+            // Animate counter
+            animateCounter();
 
-            const emojis = industryEmojis[industry];
+            // Check for referral
+            checkReferral();
 
-            // Style 1: 신뢰/권위형
-            const bio1 = `📍 ${usp} | ${getIndustryName(industry)} 전문가
-${emojis.primary} ${value}
-${emojis.secondary} ${brandName} 대표
-⬇️ ${cta}`;
+            // Load saved data from localStorage
+            loadSavedData();
 
-            // Style 2: 친근/감성형
-            const bio2 = `👋 안녕하세요! ${brandName}입니다
-✨ ${usp} & ${value}
-💌 문의는 DM or 링크
-👇 ${cta}`;
+            // Track page view
+            trackEvent('page_view');
+        });
 
-            // Style 3: 임팩트/글머리 기호형
-            const bio3 = `✔️ ${usp}
-✔️ ${value}
-✔️ ${brandName}
-${emojis.secondary} ${cta} 클릭!`;
+        // ==================== Activity Feed ====================
+        function startActivityFeed() {
+            const locations = ['서울 강남', '부산 해운대', '경기 성남', '인천 송도', '대구 수성', '서울 홍대', '경기 판교', '서울 강북'];
+            const actions = ['프로필 성형 완료', '복사하기 클릭', '무료 체험 시작'];
 
-            currentBios = [bio1, bio2, bio3];
-            return currentBios;
+            setInterval(() => {
+                const location = locations[Math.floor(Math.random() * locations.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                showActivityToast(`방금 전 ${location}에서 ${action}! 🎉`);
+            }, 8000);
         }
 
-        function getIndustryName(industry) {
-            const names = {
-                beauty: '뷰티',
-                food: '맛집/카페',
-                professional: '전문가',
-                shopping: '쇼핑몰'
-            };
-            return names[industry] || '전문가';
+        function showActivityToast(message) {
+            const existing = document.querySelector('.activity-toast');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'activity-toast';
+            toast.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div class="text-sm">${message}</div>
+                </div>
+            `;
+            document.getElementById('activityFeed').appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+            }, 5000);
         }
 
-        // Loading simulation
-        function showLoading() {
-            const loadingSection = document.getElementById('loadingSection');
-            const loadingText = document.getElementById('loadingText');
+        // ==================== Counter Animation ====================
+        function animateCounter() {
+            const counter = document.getElementById('todayCounter');
+            const target = 1247;
+            let current = 1100;
+
+            const interval = setInterval(() => {
+                current += Math.floor(Math.random() * 10) + 1;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                counter.textContent = current.toLocaleString();
+            }, 50);
+        }
+
+        // ==================== Wizard Navigation ====================
+        function scrollToWizard() {
+            document.getElementById('wizardSection').scrollIntoView({ behavior: 'smooth' });
+            trackEvent('cta_click', { location: 'hero' });
+        }
+
+        function selectIndustry(industry) {
+            selectedIndustry = industry;
+
+            // Update UI
+            document.querySelectorAll('[data-industry]').forEach(el => {
+                el.classList.remove('selected');
+            });
+            document.querySelector(`[data-industry="${industry}"]`).classList.add('selected');
+
+            // Auto advance
+            setTimeout(() => nextStep(), 300);
+
+            trackEvent('industry_selected', { industry });
+        }
+
+        function toggleStrength(btn, strength) {
+            if (btn.classList.contains('selected')) {
+                btn.classList.remove('selected');
+                selectedStrengths = selectedStrengths.filter(s => s !== strength);
+            } else {
+                if (selectedStrengths.length < 2) {
+                    btn.classList.add('selected');
+                    selectedStrengths.push(strength);
+                } else {
+                    alert('최대 2개까지만 선택 가능합니다');
+                }
+            }
+        }
+
+        function setCTA(btn, cta) {
+            document.querySelectorAll('#step5 .step-card').forEach(el => {
+                el.classList.remove('selected');
+            });
+            btn.classList.add('selected');
+            document.getElementById('ctaInput').value = cta;
+        }
+
+        function nextStep() {
+            // Validation
+            if (currentStep === 1 && !selectedIndustry) {
+                alert('업종을 선택해주세요');
+                return;
+            }
+            if (currentStep === 2 && !document.getElementById('brandNameInput').value) {
+                alert('브랜드명을 입력해주세요');
+                return;
+            }
+            if (currentStep === 3 && selectedStrengths.length === 0) {
+                alert('최소 1개의 강점을 선택해주세요');
+                return;
+            }
+            if (currentStep === 4 && !document.getElementById('valueInput').value) {
+                alert('제공 가치를 입력해주세요');
+                return;
+            }
+
+            // Hide current step
+            document.getElementById(`step${currentStep}`).classList.add('hidden');
+
+            // Show next step
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.remove('hidden');
+
+            // Update progress
+            updateProgress();
+
+            // Scroll to top
+            document.getElementById('wizardSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function prevStep() {
+            document.getElementById(`step${currentStep}`).classList.add('hidden');
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.remove('hidden');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = (currentStep / 5) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progress);
+        }
+
+        // ==================== Bio Generation ====================
+        async function generateProfiles() {
+            // Get inputs
+            const brandName = document.getElementById('brandNameInput').value;
+            const value = document.getElementById('valueInput').value;
+            const cta = document.getElementById('ctaInput').value;
+
+            // Show loading
+            document.getElementById('step5').classList.add('hidden');
+            document.getElementById('loadingStep').classList.remove('hidden');
+
+            // Simulate AI processing
             const messages = [
-                '경쟁사 프로필 분석 중...',
-                '가독성 최적화 중...',
-                '신뢰도 강화 중...',
+                '경쟁사 프로필 1,247개 분석 중...',
+                '업종별 트렌드 키워드 추출 중...',
+                '가독성 최적화 알고리즘 적용 중...',
+                '신뢰도 강화 패턴 생성 중...',
                 '완벽한 줄바꿈 배치 중...'
             ];
 
-            loadingSection.classList.remove('hidden');
+            for (let i = 0; i < messages.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 600));
+                document.getElementById('loadingText').textContent = messages[i];
+            }
 
-            let index = 0;
-            const interval = setInterval(() => {
-                index++;
-                if (index < messages.length) {
-                    loadingText.textContent = messages[index];
-                }
-            }, 500);
+            // Generate bios
+            generatedBios = generateBioTemplates(brandName, value, cta);
 
-            return new Promise(resolve => {
+            // Display results
+            document.getElementById('bioText0').textContent = generatedBios[0];
+            document.getElementById('bioText1').textContent = generatedBios[1];
+            document.getElementById('bioText2').textContent = generatedBios[2];
+
+            // Update mockup
+            updateMockup(brandName, generatedBios[1]);
+
+            // Hide loading, show results
+            document.getElementById('loadingStep').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+
+            // Save to localStorage
+            saveToLocalStorage();
+
+            trackEvent('profile_generated', { industry: selectedIndustry });
+        }
+
+        function generateBioTemplates(brandName, value, cta) {
+            const data = industryData[selectedIndustry];
+            const strengthText = selectedStrengths.join(', ');
+
+            // Advanced template variations
+            const templates = [];
+
+            // Style 1: 신뢰/권위형
+            templates.push(`📍 ${strengthText} | ${data.name} 전문가
+${data.emojis.primary} ${value}
+${data.emojis.secondary} ${brandName} 대표
+⬇️ ${cta}`);
+
+            // Style 2: 친근/감성형
+            templates.push(`👋 안녕하세요! ${brandName}입니다
+✨ ${strengthText} & ${value}
+💌 문의는 DM or 링크로
+👇 ${cta}`);
+
+            // Style 3: 임팩트형
+            templates.push(`${data.emojis.primary} ${strengthText}
+${data.emojis.secondary} ${value}
+${data.emojis.tertiary} ${brandName}
+⬇️ ${cta} 클릭!`);
+
+            return templates;
+        }
+
+        function updateMockup(brandName, bioText) {
+            const username = brandName.toLowerCase().replace(/\s+/g, '');
+            document.getElementById('mockupUsername').textContent = username;
+            document.getElementById('mockupBrandName').textContent = brandName;
+            document.getElementById('mockupBio').textContent = bioText;
+            document.getElementById('mockupEmoji').textContent = industryData[selectedIndustry].emoji;
+        }
+
+        function selectStyle(index) {
+            updateMockup(
+                document.getElementById('brandNameInput').value,
+                generatedBios[index]
+            );
+        }
+
+        // ==================== Copy Functionality ====================
+        function copyBio(index, event) {
+            event.stopPropagation();
+
+            const text = generatedBios[index];
+            const watermark = '\n\n💡 프로필 제작: reelscode-bio.netlify.app';
+            const fullText = isPremiumUnlocked ? text : text + watermark;
+
+            navigator.clipboard.writeText(fullText).then(() => {
+                // Confetti
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.6 }
+                });
+
+                // Show next steps
+                showActivityToast('✅ 클립보드에 복사되었습니다!');
+
+                // Track
+                trackEvent('bio_copied', { style: index, hasPremium: isPremiumUnlocked });
+
+                // Change button text
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ 복사 완료!';
                 setTimeout(() => {
-                    clearInterval(interval);
-                    loadingSection.classList.add('hidden');
-                    resolve();
+                    btn.textContent = originalText;
                 }, 2000);
             });
         }
 
-        // Update mockup preview
-        function updateMockupPreview(bioText) {
-            document.getElementById('bioPreview').textContent = bioText;
+        // ==================== Premium Unlock ====================
+        function showEmailModal() {
+            document.getElementById('emailModal').classList.remove('hidden');
+            trackEvent('email_modal_shown');
         }
 
-        // Update brand name in mockup
-        function updateMockupBrandName() {
-            const brandName = document.getElementById('brandName').value || 'reelscode';
-            const username = brandName.toLowerCase().replace(/\s+/g, '');
-            document.getElementById('mockupBrandName').textContent = username;
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.add('hidden');
         }
 
-        // Show results
-        function showResults() {
-            const bios = generateBios();
+        function unlockPremium() {
+            const email = document.getElementById('emailInput').value;
 
-            document.getElementById('bioText1').textContent = bios[0];
-            document.getElementById('bioText2').textContent = bios[1];
-            document.getElementById('bioText3').textContent = bios[2];
-
-            document.getElementById('resultsSection').classList.remove('hidden');
-            updateMockupPreview(bios[0]);
-
-            // Scroll to results
-            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Tab switching
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active tab
-                document.querySelectorAll('.tab-button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-
-                // Show corresponding bio
-                const style = this.dataset.style;
-                document.querySelectorAll('.bio-content').forEach(content => {
-                    content.classList.add('hidden');
-                });
-                document.getElementById(`bioResult${style}`).classList.remove('hidden');
-
-                // Update mockup preview
-                updateMockupPreview(currentBios[style - 1]);
-            });
-        });
-
-        // Copy functionality
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('copy-btn')) {
-                const targetId = e.target.dataset.target;
-                const text = document.getElementById(targetId).textContent;
-
-                navigator.clipboard.writeText(text).then(() => {
-                    // Confetti effect
-                    confetti({
-                        particleCount: 100,
-                        spread: 70,
-                        origin: { y: 0.6 }
-                    });
-
-                    // Button feedback
-                    const originalText = e.target.textContent;
-                    e.target.textContent = '✅ 복사 완료!';
-                    setTimeout(() => {
-                        e.target.textContent = originalText;
-                    }, 2000);
-                });
-            }
-        });
-
-        // Generate button
-        document.getElementById('generateBtn').addEventListener('click', async function() {
-            if (!document.getElementById('brandName').value) {
-                alert('브랜드명을 입력해주세요!');
+            if (!email || !email.includes('@')) {
+                alert('올바른 이메일을 입력해주세요');
                 return;
             }
 
-            updateMockupBrandName();
-            await showLoading();
-            showResults();
-        });
+            // Save email (실제로는 서버로 전송)
+            localStorage.setItem('userEmail', email);
+            isPremiumUnlocked = true;
 
-        // Reset button
-        document.getElementById('resetBtn').addEventListener('click', function() {
+            // Unlock UI
+            document.querySelector('.blur-lock').classList.remove('blur-lock');
+            document.querySelector('.unlock-overlay').remove();
+            document.querySelector('#style3Card .btn-secondary').classList.remove('opacity-50', 'cursor-not-allowed');
+            document.querySelector('#style3Card .btn-secondary').classList.add('btn-primary');
+            document.querySelector('#style3Card .btn-secondary').textContent = '📋 이 버전 복사하기';
+            document.querySelector('#style3Card .btn-secondary').onclick = function(e) { copyBio(2, e); };
+
+            closeEmailModal();
+
+            // Confetti
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.5 }
+            });
+
+            showActivityToast('🎉 프리미엄 잠금 해제 완료!');
+
+            trackEvent('premium_unlocked', { email });
+        }
+
+        // ==================== Share & Referral ====================
+        function shareToFriend() {
+            const referralCode = generateReferralCode();
+            const url = `${window.location.origin}${window.location.pathname}?ref=${referralCode}`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: '인스타 프로필 3초 만에 완성하기',
+                    text: '나도 이거로 프로필 만들었어! 진짜 3초 걸림 ㅋㅋ',
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url);
+                alert('공유 링크가 복사되었습니다!\n친구에게 보내주세요 😊');
+            }
+
+            trackEvent('referral_shared', { code: referralCode });
+        }
+
+        function generateReferralCode() {
+            return 'REF' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+
+        function checkReferral() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const ref = urlParams.get('ref');
+
+            if (ref) {
+                showActivityToast('🎁 친구 초대로 방문하셨네요! 프리미엄 1개월 무료 제공!');
+                isPremiumUnlocked = true;
+                trackEvent('referral_visit', { code: ref });
+            }
+        }
+
+        // ==================== LocalStorage ====================
+        function saveToLocalStorage() {
+            const data = {
+                industry: selectedIndustry,
+                brandName: document.getElementById('brandNameInput').value,
+                strengths: selectedStrengths,
+                value: document.getElementById('valueInput').value,
+                cta: document.getElementById('ctaInput').value,
+                bios: generatedBios,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('instabio_data', JSON.stringify(data));
+        }
+
+        function loadSavedData() {
+            const saved = localStorage.getItem('instabio_data');
+            if (saved) {
+                const data = JSON.parse(saved);
+                // Could auto-fill form here if needed
+            }
+        }
+
+        // ==================== Reset ====================
+        function resetWizard() {
+            currentStep = 1;
+            selectedIndustry = '';
+            selectedStrengths = [];
+            generatedBios = ['', '', ''];
+
             document.getElementById('resultsSection').classList.add('hidden');
-            document.getElementById('inputSection').scrollIntoView({ behavior: 'smooth' });
-            updateMockupPreview(`아직 프로필을 생성하지 않았습니다.
+            document.getElementById('step1').classList.remove('hidden');
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById('step1').classList.remove('hidden');
 
-👈 왼쪽 입력창에서 정보를 입력하고
-'프로필 성형하기' 버튼을 눌러주세요!
+            updateProgress();
+            scrollToWizard();
+        }
 
-✨ 3가지 스타일의 프로필이 자동 생성됩니다.`);
-        });
+        // ==================== Analytics ====================
+        function trackEvent(eventName, params = {}) {
+            // Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, params);
+            }
 
-        // Update mockup brand name on input
-        document.getElementById('brandName').addEventListener('input', updateMockupBrandName);
+            // Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', eventName, params);
+            }
 
-        // Initialize
-        updateMockupBrandName();
+            console.log('Event tracked:', eventName, params);
+        }
+
+        // ==================== Utility Functions ====================
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Increment counter periodically
+        setInterval(() => {
+            const counter = document.getElementById('todayCounter');
+            let current = parseInt(counter.textContent.replace(',', ''));
+            current += Math.floor(Math.random() * 3);
+            counter.textContent = current.toLocaleString();
+        }, 30000);
     </script>
 </body>
 </html>
